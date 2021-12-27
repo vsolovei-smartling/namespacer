@@ -73,7 +73,7 @@ class RenamespaceCommand extends Command {
 
 			$output->writeln("Creating project ... ");
 			$output->writeln("");
-			`cd $sourcePath && composer update`;
+			`cd $sourcePath && composer update --no-dev`;
 			$output->writeln("");
 		} else {
 			$sourcePath = $input->getOption('source');
@@ -223,9 +223,9 @@ class RenamespaceCommand extends Command {
 		$output->writeln("Saved project.  Running composer ...");
 		$output->writeln("");
 
-		`cd {$projectOutputPath} && composer update`;
+		`cd {$projectOutputPath} && composer update --no-dev`;
 		`rm -rf {$projectOutputPath}vendor/bin`;
-		rename($projectOutputPath.'vendor', $outputPath.'lib');
+		rename($projectOutputPath.'inc/third-party', $outputPath.'lib');
 		`rm -rf $tempPath`;
 
 		$output->writeln("");

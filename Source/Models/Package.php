@@ -86,7 +86,7 @@ class Package {
 
 		$composerFile = $this->path.'composer.json';
 		if (!file_exists($composerFile)) {
-			throw new \Exception("Missing composer.json for package {$this->name}.");
+			throw new \Exception("Missing composer.json for package $this->name ($composerFile).");
 		}
 
 		$config = json_decode(file_get_contents($composerFile), true);

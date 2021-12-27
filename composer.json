@@ -1,5 +1,5 @@
 {
-  "name": "ilab/namespacer",
+  "name": "vsolovei-smartling/namespacer",
   "description": "Tool for re-namespacing composer packages for use in WordPress plugins.",
   "type": "library",
   "license": "LGPL-3.0-or-later",

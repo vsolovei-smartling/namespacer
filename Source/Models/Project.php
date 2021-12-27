@@ -30,7 +30,7 @@ class Project {
 		foreach($lockConfig['packages'] as $package) {
 			$packageName = $package['name'];
 			$version = $package['version'];
-			$path = trailingslashit($sourcePath.'vendor/'.$packageName);
+			$path = trailingslashit($sourcePath.'inc/third-party/'.$packageName);
 
 			$package = new Package($packageName, $path, $version);
 			$this->packages[$packageName] = $package;
